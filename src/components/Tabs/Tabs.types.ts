@@ -1,13 +1,13 @@
 export interface ITabHeaderItemProps {
     text: string,
     selected?: boolean,
-    onClick?: () => void
+    onClick: () => void
 }
 
 export interface ITabs {
     tabs: ITab[],
     activeIndex: number,
-    onTabClick?: (index: number) => void
+    onTabClick: (index: number) => void
 }
 
 export interface ITab {
