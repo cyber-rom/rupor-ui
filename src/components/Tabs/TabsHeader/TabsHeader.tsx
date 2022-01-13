@@ -22,7 +22,6 @@ const TabsHeaderContainer = styled.div`
 
 const TabsHeader: FC<ITabs> = ({tabs, activeIndex, onTabClick}) => {
     const handleClick = (index: number) => {
-        console.log('TabsHeader')
         onTabClick(index)
     }
     return (

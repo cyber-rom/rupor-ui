@@ -20,7 +20,6 @@ const TabsContainer = styled.div`
 const Tabs: FC<ITabs> = ({tabs}) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const handleTabClick = (index: number) => {
-        console.log('Tabs')
         setActiveIndex(index)
     }
     return (
