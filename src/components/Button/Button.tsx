@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonR } from './Button.style';
 
-interface ButtonProps {
+export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -21,6 +21,9 @@ interface ButtonProps {
    */
   onClick?: () => void;
   title?: string
+  loaderIcon?: string
+  isLoading?: boolean
+  isDisabled?: boolean
 }
 
 export const Button = ({
@@ -30,7 +33,12 @@ export const Button = ({
   size = 'medium',
   backgroundColor,
   title,
+  onClick,
+  loaderIcon,
+  isLoading,
+  isDisabled
 }: ButtonProps) => {
+
   return (
     <ButtonR
       backgroundColor={backgroundColor}
@@ -38,8 +46,10 @@ export const Button = ({
       primary={primary}
       secondary={secondary}
       color={color}
+      onClick={!isDisabled ? onClick : undefined}
+      isDisabled={isDisabled}
     >
-      {title}
+      {isLoading ? loaderIcon : title}
     </ButtonR>
   );
 };
