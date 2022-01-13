@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "rupor" // Основные правила ESlint для всех проектов "Рупор"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "indent": "off", // Правила отступов, конфликтуют с @typescript-eslint/indent, поэтому отключены
+    "@typescript-eslint/indent": [ // Отступы
+      "error",
+      2
+    ],
+    "react/jsx-indent-props": [ // Отступы
+      "error",
+      2
+    ],
+    "react/jsx-indent": [ // Отступы
+      "error",
+      2
+    ],
+    "react/require-default-props": "off",
+    "import/prefer-default-export": 0,
+    "no-console": "error",
+    "react/jsx-handler-names": "off", // Отключено наименование обработчиков событий согласно шаблону "handle..."
+    "react/function-component-definition": "off", // Отключено создание компонентов только как function declaration
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+  }
+}

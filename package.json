@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf ./dist && tsc -b && tsc -d",
+    "build": "rm -rf ./dist && tsc --project ./tsconfig.prod.json && tsc --project ./tsconfig.prod.json -d",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "lint": "eslint --fix --max-warnings=0 './**/*.{ts,tsx}'"
+    "lint": "tsc --noEmit && eslint --fix --max-warnings=0 './**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@types/node": "^16.11.19",
@@ -67,11 +67,6 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "webpack": "^5.66.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{ts,tsx}": "npm run lint"

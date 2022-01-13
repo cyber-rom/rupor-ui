@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TabHeaderItemContainer = styled.div`
   display: flex;
@@ -28,13 +28,13 @@ export const TabHeaderItemContainer = styled.div`
     line-height: 28px;
 
   }
-`
+`;
 
 export const TabLayoutContainer = styled.div`
   height: 100%;
   width: 100%;
   background-color: #3b3d42;
-`
+`;
 
 export const TabsContainer = styled.div`
   height: 100%;
@@ -48,7 +48,7 @@ export const TabsContainer = styled.div`
     width: 100%;
     box-sizing: border-box;
   }
-`
+`;
 
 export const TabsHeaderContainer = styled.div`
   width: 100%;
@@ -56,4 +56,4 @@ export const TabsHeaderContainer = styled.div`
   & > .tabs-header__header-item-container {
     flex: 1;
   }
-`
+`;

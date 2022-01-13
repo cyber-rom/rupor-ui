@@ -1,7 +1,6 @@
 import React from 'react';
 import { ButtonR } from './Button.style';
-import { ButtonProps } from './Button.types'
-
+import { ButtonProps } from './Button.types';
 
 export const Button = ({
   primary,
@@ -14,21 +13,18 @@ export const Button = ({
   loaderIcon,
   isLoading,
   isDisabled,
-  circle
-}: ButtonProps) => {
-
-  return (
-    <ButtonR
-      backgroundColor={backgroundColor}
-      size={size}
-      primary={primary}
-      secondary={secondary}
-      color={color}
-      onClick={!isDisabled ? onClick : undefined}
-      isDisabled={isDisabled}
-      circle={circle}
-    >
-      {isLoading ? loaderIcon : title}
-    </ButtonR>
-  );
-};
+  circle,
+}: ButtonProps) => (
+  <ButtonR
+    backgroundColor={backgroundColor}
+    size={size}
+    primary={primary}
+    secondary={secondary}
+    color={color}
+    onClick={!isDisabled ? onClick : undefined}
+    isDisabled={isDisabled}
+    circle={circle}
+  >
+    {isLoading ? loaderIcon : title}
+  </ButtonR>
+);
