@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react'
 import {TabsHeader} from "../TabsHeader/TabsHeader";
 import styled from "styled-components";
+import {ITabs} from "../Tabs.types";
 
 const TabsContainer = styled.div`
   height: 100%;
@@ -16,7 +17,7 @@ const TabsContainer = styled.div`
   }
 `
 
-const Tabs: FC<any> = ({tabs}) => {
+const Tabs: FC<ITabs> = ({tabs}) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const handleTabClick = (index: number) => {
         console.log('Tabs')

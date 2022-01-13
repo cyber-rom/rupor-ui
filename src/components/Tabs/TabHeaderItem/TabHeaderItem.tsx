@@ -1,11 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-
-interface ITabHeaderItemProps {
-    text: any,
-    selected?: boolean,
-    onClick?: any
-}
+import {ITabHeaderItemProps} from "../Tabs.types";
 
 const TabHeaderItemContainer = styled.div`
   display: flex;
@@ -40,7 +35,9 @@ const TabHeaderItem: FC<ITabHeaderItemProps> = ({text, selected, onClick}) => {
 
 
     const handleClick = () => {
-        onClick()
+        if (onClick) {
+            onClick()
+        }
     }
 
     return (

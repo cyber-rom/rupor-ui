@@ -3,9 +3,9 @@ import {TabHeaderItem} from "../TabHeaderItem/TabHeaderItem";
 import styled from "styled-components";
 
 interface ITabs {
-    tabs: Array<ITab>,
+    tabs: ITab[],
     activeIndex: number,
-    onTabClick: any
+    onTabClick: (index: number) => void
 }
 
 interface ITab {
