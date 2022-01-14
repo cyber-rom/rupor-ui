@@ -1,8 +1,6 @@
-import React, {FC} from 'react';
-import {TabLayoutContainer} from "../Tabs.styles";
+import React, { FC } from 'react';
+import { TabLayoutContainer } from '../Tabs.styles';
 
-const TabLayout: FC = ({children}) => {
-    return <TabLayoutContainer>{children}</TabLayoutContainer>
-}
+const TabLayout: FC = ({ children }) => <TabLayoutContainer>{children}</TabLayoutContainer>;
 
-export {TabLayout}
+export { TabLayout };
