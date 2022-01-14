@@ -17,6 +17,7 @@ export const TabHeaderItemContainer = styled.div`
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     cursor: pointer;
+    text-transform: none;
   }
   .tab-header-item__content-container--active {
     background-color: #3b3d42;
