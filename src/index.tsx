@@ -1,7 +1,2 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-ReactDOM.render(
-  <React.StrictMode />,
-  document.getElementById('root'),
-);
+export * from './components';
+export * from './styles';
