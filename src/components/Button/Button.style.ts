@@ -36,31 +36,44 @@ export const ButtonR = styled.button<ButtonProps>`
     border-radius: ${(props) => (props.circle ? '50%' : '8px')};;
     background-color: ${(props) => {
     if (props.backgroundColor) return props.backgroundColor;
-    if (props.primary) return '#FC203C';
-    if (props.secondary) return '#E7EAF2';
     if (props.size === 'tag') return '#27282D';
-    return '#FC203C';
+    switch (props.theme) {
+      case 'primary':
+        return '#FC203C';
+      case 'secondary':
+        return '#E7EAF2';
+      default:
+        return '#E7EAF2';
+    }
   }};
     color: ${(props) => {
     if (props.color) return props.color;
-    if (props.primary) return '#fff';
-    if (props.secondary) return '#333';
     if (props.size === 'tag') return '#80838C';
-    return '#fff';
+    switch (props.theme) {
+      case 'primary':
+        return '#fff';
+      case 'secondary':
+        return '#333';
+      default:
+        return '#333';
+    }
   }};
-    cursor: ${(props) => !props.isDisabled && 'pointer'};
+    cursor: ${(props) => !props.disabled && 'pointer'};
     display: inline-block;
     line-height: ${(props) => (props.circle ? '14px' : '20px')};
-    opacity: ${(props) => props.isDisabled && '0.4'};
+    opacity: ${(props) => props.disabled && '0.4'};
     &:hover {
         background-color: ${(props) => {
     if (props.size === 'tag') return '#2F3136';
-    if (props.backgroundColor) return '';
-    if (!props.isDisabled) {
-      if (props.primary) return '#FF334D';
-      return '#DBE0EC';
-    }
-    return '';
+    if (props.backgroundColor) return null;
+    if (!props.disabled) {
+      switch (props.theme) {
+        case 'primary':
+          return '#FF334D';
+        default:
+          return '#DBE0EC';
+      }
+    } return null;
   }};
     }
 `;
