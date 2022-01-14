@@ -13,21 +13,18 @@ export interface ButtonProps {
      * How large should the button be?
      */
   size?: ButtonSize;
-  theme: 'primary' | 'secondary';
+  theme: 'primary' | 'secondary' | 'tag';
   /**
      * Optional click handler
      */
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   title?: string | JSX.Element
-  loaderIcon?: string
+  loaderIcon?: JSX.Element
   isLoading?: boolean
   disabled?: boolean
   circle?: boolean
 }
 
 export enum ButtonSize {
-  Small = 'small',
-  Medium = 'medium',
-  Large = 'large',
   Tag = 'tag',
 }
