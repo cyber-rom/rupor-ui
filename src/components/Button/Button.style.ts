@@ -1,79 +1,70 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button.types';
+import { vars } from '../../styles';
+
+const primaryBtn = css`
+        background-color: ${vars.colorPrimaryDefault};
+        color: ${vars.colorTextLight};
+        font-size: ${vars.x4};
+        padding: ${vars.x3_5} ${vars.x6};
+        border-radius: ${vars.x2};
+        &:hover {
+            background-color: ${vars.colorPrimaryHover};
+        }
+`;
+
+const secondaryBtn = css`
+        background-color: ${vars.colorSecondaryLightDefault};
+        color: ${vars.colorTextDark};
+        font-size: ${vars.x4};
+        padding: ${vars.x2_5} ${vars.x4};
+        border-radius: ${vars.x2};
+        &:hover {
+            background-color: ${vars.colorSecondaryLightHover};
+        }
+`;
+
+const defaultBtn = css`
+        background-color: ${vars.colorSecondaryDarkDefault};
+        color: ${vars.colorTextDark};
+        padding: ${vars.x4} ${vars.x5};
+        border-radius: ${vars.x2};
+`;
+
+const tagBtn = css`
+        font-size: ${vars.x2_5};
+        padding: ${vars.x05} ${vars.x1};
+        color: ${vars.colorTag};
+        border-radius: ${vars.x05};
+        background-color: ${vars.colorSecondaryDarkDefault};
+        &:hover {
+            background-color: ${vars.colorSecondaryDarkHover};
+        }
+`;
 
 export const ButtonR = styled.button<ButtonProps>`
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: ${(props) => (props.size === 'tag' ? '500' : '600')};;
-    font-size: ${(props) => {
-    switch (props.size) {
-      case 'small':
-        return '12px';
-      case 'medium':
-        return '14px';
-      case 'large':
-        return '16px';
+    ${(props) => {
+    switch (props.theme) {
+      case 'primary':
+        return primaryBtn;
+      case 'secondary':
+        return secondaryBtn;
       case 'tag':
-        return '10x';
+        return tagBtn;
       default:
-        return '12px';
+        return defaultBtn;
     }
-  }};
-    padding: ${(props) => {
-    switch (props.size) {
-      case 'small':
-        return '10px 16px';
-      case 'medium':
-        return '11px 20px';
-      case 'large':
-        return '13px 24px';
-      case 'tag':
-        return '1.5px 4px 2.5px';
-      default:
-        return '16px 20px';
-    }
+  }}
+
+    font-family: ${vars.fontFamily};
+    font-weight: ${(props) => (props.theme === 'tag' ? '500' : '600')};
   }};
     border: 0;
-    border-radius: ${(props) => (props.circle ? '50%' : '8px')};;
-    background-color: ${(props) => {
-    if (props.backgroundColor) return props.backgroundColor;
-    if (props.size === 'tag') return '#27282D';
-    switch (props.theme) {
-      case 'primary':
-        return '#FC203C';
-      case 'secondary':
-        return '#E7EAF2';
-      default:
-        return '#E7EAF2';
-    }
-  }};
-    color: ${(props) => {
-    if (props.color) return props.color;
-    if (props.size === 'tag') return '#80838C';
-    switch (props.theme) {
-      case 'primary':
-        return '#fff';
-      case 'secondary':
-        return '#333';
-      default:
-        return '#333';
-    }
-  }};
+    border-radius: ${(props) => (props.circle && '50%')};;
+    color: ${(props) => props.color}};
+    background-color: ${(props) => props.backgroundColor}};
     cursor: ${(props) => !props.disabled && 'pointer'};
     display: inline-block;
-    line-height: ${(props) => (props.circle ? '14px' : '20px')};
-    opacity: ${(props) => props.disabled && '0.4'};
-    &:hover {
-        background-color: ${(props) => {
-    if (props.size === 'tag') return '#2F3136';
-    if (props.backgroundColor) return null;
-    if (!props.disabled) {
-      switch (props.theme) {
-        case 'primary':
-          return '#FF334D';
-        default:
-          return '#DBE0EC';
-      }
-    } return null;
-  }};
-    }
+    line-height: ${(props) => (props.circle && `${vars.x3_5}`)};
+    opacity: ${(props) => props.disabled && vars.toneHover};
 `;

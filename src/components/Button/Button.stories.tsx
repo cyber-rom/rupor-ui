@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './Button';
 import ArrowIcon from '../../assets/icons/arrowIcon';
 
-import { ButtonSize } from './Button.types';
-
 export default {
   title: 'Example/Button',
   component: Button,
@@ -16,12 +14,12 @@ export const Primary = Template.bind({});
 Primary.args = {
   theme: 'primary',
   title: 'Primary Button',
-  size: ButtonSize.Large,
+  // иконка для теста
+  loaderIcon: <ArrowIcon />,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  size: ButtonSize.Large,
   title: 'Secondary Button',
   theme: 'secondary',
 };
@@ -36,5 +34,5 @@ Circle.args = {
 export const Tag = Template.bind({});
 Tag.args = {
   title: 'Tag',
-  size: ButtonSize.Tag,
+  theme: 'tag',
 };
