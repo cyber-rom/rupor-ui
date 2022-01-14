@@ -10,12 +10,14 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "lint": "tsc --noEmit && eslint --fix --max-warnings=0 './**/*.{ts,tsx}'"
+    "lint": "tsc --noEmit && eslint --fix './**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@types/node": "^16.11.19",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "colord": "^2.9.2",
+    "param-case": "^3.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -61,6 +63,7 @@
     "@storybook/node-logger": "^6.4.12",
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.12",
+    "@types/color": "^3.0.2",
     "@types/styled-components": "^5.1.20",
     "eslint": "^8.6.0",
     "eslint-config-rupor": "bitbucket:cyrm/rupor-eslint-frontend",
