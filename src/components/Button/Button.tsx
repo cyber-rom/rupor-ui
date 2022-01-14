@@ -3,8 +3,6 @@ import { ButtonR } from './Button.style';
 import { ButtonProps } from './Button.types';
 
 export const Button = ({
-  primary,
-  secondary,
   color,
   size,
   backgroundColor,
@@ -12,17 +10,17 @@ export const Button = ({
   onClick,
   loaderIcon,
   isLoading,
-  isDisabled,
+  disabled,
   circle,
+  theme,
 }: ButtonProps) => (
   <ButtonR
     backgroundColor={backgroundColor}
     size={size}
-    primary={primary}
-    secondary={secondary}
     color={color}
-    onClick={!isDisabled ? onClick : undefined}
-    isDisabled={isDisabled}
+    theme={theme}
+    onClick={onClick}
+    disabled={disabled}
     circle={circle}
   >
     {isLoading ? loaderIcon : title}

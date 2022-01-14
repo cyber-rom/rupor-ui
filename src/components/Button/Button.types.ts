@@ -13,14 +13,15 @@ export interface ButtonProps {
      * How large should the button be?
      */
   size?: ButtonSize;
+  theme: 'primary' | 'secondary';
   /**
      * Optional click handler
      */
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  title?: string
+  title?: string | JSX.Element
   loaderIcon?: string
   isLoading?: boolean
-  isDisabled?: boolean
+  disabled?: boolean
   circle?: boolean
 }
 
