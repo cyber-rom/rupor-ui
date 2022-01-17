@@ -3,7 +3,7 @@ import { ITabHeaderItemProps } from '../Tabs.types';
 import { TabHeaderItemContainer } from '../Tabs.styles';
 
 const TabHeaderItem: FC<ITabHeaderItemProps> = ({ text, selected, onClick }) => (
-  <TabHeaderItemContainer onClick={() => onClick}>
+  <TabHeaderItemContainer onClick={onClick}>
     <div className={`tab-header-item__content-container 
         ${selected ? 'tab-header-item__content-container--active' : ''}`}
     >
