@@ -3,7 +3,7 @@ import { PaperProps, PaperVariants } from './Paper.types';
 import { vars } from '../../styles';
 
 export const PaperWrapper = styled.div<PaperProps>`
-  border-radius: ${({ square }) => (square ? 0 : '8px')};
+  border-radius: ${({ square, borderRadius = 8 }) => (square ? 0 : `${borderRadius}px`)};
   border: ${({ variant }) => {
     switch (variant) {
       case PaperVariants.outlined:

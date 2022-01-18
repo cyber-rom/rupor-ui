@@ -19,6 +19,11 @@ Outlined.args = {
   variant: PaperVariants.outlined,
 };
 
+export const WithBorderRadius = Template.bind({});
+WithBorderRadius.args = {
+  borderRadius: 16,
+};
+
 export const OutlinedSquare = Template.bind({});
 OutlinedSquare.args = {
   variant: PaperVariants.outlined,

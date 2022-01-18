@@ -8,4 +8,5 @@ export interface PaperProps extends HTMLAttributes<HTMLDivElement> {
   elevation?: number;
   square?: boolean;
   variant?: PaperVariants;
+  borderRadius?: number;
 }
