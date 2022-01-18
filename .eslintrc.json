@@ -21,9 +21,12 @@
     ],
     "react/require-default-props": "off",
     "import/prefer-default-export": 0,
-    "no-console": "error",
+    "no-console": "warn",
     "react/jsx-handler-names": "off", // Отключено наименование обработчиков событий согласно шаблону "handle..."
     "react/function-component-definition": "off", // Отключено создание компонентов только как function declaration
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "arrow-body-style": "off",
+    "react/self-closing-comp": "off"
   }
 }

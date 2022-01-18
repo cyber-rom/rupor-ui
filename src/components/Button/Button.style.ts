@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
+
 import { ButtonProps } from './Button.types';
 import { vars } from '../../styles';
+import { tone } from '../../styles/theme/opasity';
 
 const primaryBtn = css`
         background-color: ${vars.colorPrimaryDefault};
@@ -58,13 +60,12 @@ export const ButtonR = styled.button<ButtonProps>`
 
     font-family: ${vars.fontFamily};
     font-weight: ${(props) => (props.theme === 'tag' ? '500' : '600')};
-  }};
     border: 0;
-    border-radius: ${(props) => (props.circle && '50%')};;
-    color: ${(props) => props.color}};
-    background-color: ${(props) => props.backgroundColor}};
+    border-radius: ${(props) => (props.circle && '50%')};
+    color: ${(props) => props.color};
+    background-color: ${(props) => props.backgroundColor};
     cursor: ${(props) => !props.disabled && 'pointer'};
     display: inline-block;
     line-height: ${(props) => (props.circle && `${vars.x3_5}`)};
-    opacity: ${(props) => props.disabled && vars.toneHover};
+    opacity: ${(props) => props.disabled && tone.toneHover};
 `;

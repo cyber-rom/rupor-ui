@@ -1,7 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Button } from './Button';
-import ArrowIcon from '../../assets/icons/arrowIcon';
+import { ArrowIcon } from '../../assets/icons';
 
 export default {
   title: 'Example/Button',
