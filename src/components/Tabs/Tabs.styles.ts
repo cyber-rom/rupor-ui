@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { vars } from '../../styles';
 
 export const TabHeaderItemContainer = styled.div`
   display: flex;
@@ -7,12 +8,13 @@ export const TabHeaderItemContainer = styled.div`
   width: 100%;
   background-color: transparent;
   .tab-header-item__content-container {
-    width: 240px;
+    width: 100%;
+    height: 100%;
+    font-family: ${vars.fontFamily};
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    height: 100%;
     flex: 1;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
