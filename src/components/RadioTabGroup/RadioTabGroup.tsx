@@ -4,7 +4,7 @@ import { RadioTabButtonGroup } from './RadioTabGroup.styles';
 import { RadioTabGroupProps } from './RadioTabGroup.types';
 
 const RadioTabGroup: FC<RadioTabGroupProps> = ({ tabs, onSelectHandler }) => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState<number>(0);
   const onClickHandler = (id: number) => {
     setCurrent(id);
     onSelectHandler();
