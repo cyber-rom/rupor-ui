@@ -16,6 +16,6 @@ const Template: ComponentStory<typeof ShowMoreBtn> = (args) => (
 export const ShowMoreTest = Template.bind({});
 ShowMoreTest.args = {
   collapsed: false,
-  onClick: () => console.log('1'),
+  onClick: () => {},
   icon: <DownArrowIcon />,
 };
