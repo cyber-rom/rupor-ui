@@ -8,6 +8,7 @@ const defaultImageSize = css`width: 100%; height: 100%;`;
 
 const defaultWrapperSize = css`width: 96px; height: 96px;`;
 const smallWrapperSize = css`width: 40px; height: 40px;`;
+const extraSmallWrapperSize = css`width: 24px; height: 24px;`;
 
 const defaultProIconSize = css`width: 29px; height: 36px;`;
 const smallProIconSize = css`width: 16px; height: 20px;`;
@@ -16,8 +17,12 @@ export const UserAvatarWrapper = styled.div<UserAvatarWrapperProps>`
   position: relative;
   ${({ size }) => {
     switch (size) {
+      case Sizes.xs:
+        return extraSmallWrapperSize;
       case Sizes.sm:
         return smallWrapperSize;
+      case Sizes.lg:
+        return defaultWrapperSize;
       default:
         return defaultWrapperSize;
     }

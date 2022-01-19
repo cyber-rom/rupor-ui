@@ -9,6 +9,7 @@ export interface UserAvatarProps {
   htmlImageProps?: HTMLAttributes<HTMLImageElement>;
   htmlDefaultAvatarSvgProps?: SVGAttributes<SVGElement>;
   htmlProIconSvgProps?: SVGAttributes<SVGElement>;
+  className?: string;
 }
 
 export type UserAvatarWrapperProps = Pick<UserAvatarProps, 'size'>;

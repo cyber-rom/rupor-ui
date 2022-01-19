@@ -4,15 +4,22 @@ import {
 } from './UserAvatar.style';
 import { UserAvatarProps } from './UserAvatar.types';
 
-export function UserAvatar(props: UserAvatarProps) {
+export const UserAvatar = (props: UserAvatarProps) => {
   const {
-    src, size, htmlImageProps, htmlDefaultAvatarSvgProps, srcBase64, htmlProIconSvgProps, pro,
+    src,
+    size,
+    htmlImageProps,
+    htmlDefaultAvatarSvgProps,
+    srcBase64,
+    htmlProIconSvgProps,
+    pro,
+    className,
   } = props;
 
   const isSrc = src || srcBase64;
 
   return (
-    <UserAvatarWrapper size={size}>
+    <UserAvatarWrapper size={size} className={className}>
       {isSrc
         ? (
           <UserAvatarImage
@@ -24,4 +31,4 @@ export function UserAvatar(props: UserAvatarProps) {
       {pro && <UserAvatarProSvg size={size} {...htmlProIconSvgProps} />}
     </UserAvatarWrapper>
   );
-}
+};
