@@ -9,13 +9,13 @@ import { ShowMoreBtnProps } from './ShowMoreBtn.types';
 export const ShowMoreBtn = ({
   children, onClick, className, collapsed, icon,
 }: ShowMoreBtnProps) => (
-  <BtnWrapper className={className}>
+  <BtnWrapper className={className} onClick={onClick}>
     <IconContainer
       collapsed={collapsed}
-      onClick={onClick}
+
     >
       <IconWrapper>{icon}</IconWrapper>
     </IconContainer>
-    {!collapsed && <TitleWrapper onClick={onClick}>{children}</TitleWrapper>}
+    {!collapsed && <TitleWrapper>{children}</TitleWrapper>}
   </BtnWrapper>
 );
