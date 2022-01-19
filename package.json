@@ -76,5 +76,9 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": "npm run lint"
+  },
+  "engines": {
+    "node": "16.13.2",
+    "yarn": "3.1.1"
   }
 }
