@@ -5,11 +5,11 @@ import { ChannelLabelProps } from './ChannelLabel.types';
 
 export const ChannelLabel = (props: ChannelLabelProps) => {
   const {
-    label, userAvatarProps, htmlSpanProps, ...HtmlDivAttrs
+    label, userAvatarProps, htmlSpanProps, ...htmlDivProps
   } = props;
 
   return (
-    <ChannelLabelWrapper {...HtmlDivAttrs}>
+    <ChannelLabelWrapper {...htmlDivProps}>
       <ChannelLabelAvatar size={Sizes.xs} {...userAvatarProps} />
       <ChannelTitle {...htmlSpanProps}>{label}</ChannelTitle>
     </ChannelLabelWrapper>
