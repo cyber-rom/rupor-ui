@@ -10,7 +10,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "lint": "tsc --noEmit && eslint --fix './**/*.{ts,tsx}'"
+    "lint": "tsc --noEmit && eslint --fix './**/*.{ts,tsx}'",
+    "storybook:build": "build-storybook -o docs-build -s public"
   },
   "dependencies": {
     "@types/node": "^16.11.19",
