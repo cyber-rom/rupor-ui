@@ -7,7 +7,7 @@
     "build": "rm -rf ./dist && tsc --project ./tsconfig.prod.json && tsc --project ./tsconfig.prod.json -d",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook --static-dir=storybook-assets -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
     "lint": "tsc --noEmit && eslint --fix './**/*.{ts,tsx}'",
