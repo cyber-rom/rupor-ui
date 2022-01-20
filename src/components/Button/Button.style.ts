@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components';
 
-import { ButtonProps } from './Button.types';
+import { ButtonElemProps } from './Button.types';
 import { vars } from '../../styles';
 import { tone } from '../../styles/theme/opasity';
+import { fonts as ThemeFonts } from '../../styles/theme/typography';
 
 const primaryBtn = css`
+        ${{ ...ThemeFonts.fontLabelPrimary }};
         background-color: ${vars.colorPrimaryDefault};
         color: ${vars.colorTextLight};
-        font-size: ${vars.x4};
         padding: ${vars.x3_5} ${vars.x6};
         border-radius: ${vars.x2};
         &:hover {
@@ -15,14 +16,25 @@ const primaryBtn = css`
         }
 `;
 
-const secondaryBtn = css`
+const secondaryLightBtn = css`
+        ${{ ...ThemeFonts.fontLabelBtn }};
         background-color: ${vars.colorSecondaryLightDefault};
         color: ${vars.colorTextDark};
-        font-size: ${vars.x4};
         padding: ${vars.x2_5} ${vars.x4};
         border-radius: ${vars.x2};
         &:hover {
             background-color: ${vars.colorSecondaryLightHover};
+        }
+`;
+
+const secondaryDarkBtn = css`
+        background-color: ${vars.colorSecondaryDarkDefault};
+        color: ${vars.colorTextLight};
+        font-size: ${vars.x4};
+        padding: ${vars.x2_5} ${vars.x4};
+        border-radius: ${vars.x2};
+        &:hover {
+            background-color: ${vars.colorSecondaryDarkHover};
         }
 `;
 
@@ -34,7 +46,7 @@ const defaultBtn = css`
 `;
 
 const tagBtn = css`
-        font-size: ${vars.x2_5};
+        ${{ ...ThemeFonts.fontLabelSmallBtn }}
         padding: ${vars.x05} ${vars.x1};
         color: ${vars.colorTag};
         border-radius: ${vars.x05};
@@ -44,21 +56,21 @@ const tagBtn = css`
         }
 `;
 
-export const ButtonR = styled.button<ButtonProps>`
+export const ButtonR = styled.button<ButtonElemProps>`
     ${(props) => {
     switch (props.theme) {
       case 'primary':
         return primaryBtn;
       case 'secondary':
-        return secondaryBtn;
+        return secondaryLightBtn;
+      case 'secondaryDark':
+        return secondaryDarkBtn;
       case 'tag':
         return tagBtn;
       default:
         return defaultBtn;
     }
   }}
-
-    font-family: ${vars.fontFamily};
     font-weight: ${(props) => (props.theme === 'tag' ? '500' : '600')};
     border: 0;
     border-radius: ${(props) => (props.circle && '50%')};
@@ -68,4 +80,14 @@ export const ButtonR = styled.button<ButtonProps>`
     display: inline-block;
     line-height: ${(props) => (props.circle && `${vars.x3_5}`)};
     opacity: ${(props) => props.disabled && tone.toneHover};
+`;
+
+export const IconWrapper = styled.span`
+    display: inline-block;
+    margin-right: ${vars.x4};
+`;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
 `;

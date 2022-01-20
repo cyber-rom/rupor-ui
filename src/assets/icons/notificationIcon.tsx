@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NotificationIcon = (props: React.SVGAttributes<SVGSVGElement>) => (
+const NotificationIcon = (props: React.SVGAttributes<SVGElement>) => (
   <svg
     width="18px"
     height="18px"
