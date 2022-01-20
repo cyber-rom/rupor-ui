@@ -28,8 +28,6 @@ export const StyledText = styled.p<HTMLAttributes<HTMLParagraphElement>>`
   margin-left: ${vars.x3};
   width: 446px;
   height: ${vars.x5};
-  left: 52px;
-  top: ${vars.x3_5};
   font-size: ${vars.x3_5};
   line-height: ${vars.x5};
   color: ${vars.colorBlack};
@@ -37,7 +35,6 @@ export const StyledText = styled.p<HTMLAttributes<HTMLParagraphElement>>`
 
 export const StyledSpan = styled.span<HTMLAttributes<HTMLSpanElement>>`
   height: ${vars.x5};
-  top: ${vars.x3_5};
   opacity: 50%;
   font-size: ${vars.x3_5};
   line-height: ${vars.x5};
