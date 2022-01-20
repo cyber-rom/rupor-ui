@@ -97,6 +97,16 @@ export const sizes = {
     lineHeight: '20px',
     fontWeight: 600,
   },
+  size18: {
+    fontSize: '14px',
+    lineHeight: '24px',
+    fontWeight: 400,
+  },
+  size19: {
+    fontSize: '12px',
+    lineHeight: '20px',
+    fontWeight: 400,
+  },
 };
 
 export const fonts: Record<string, any> = {
@@ -112,7 +122,9 @@ export const fonts: Record<string, any> = {
   fontLabelSecondary: { ...sizes.size13 },
   fontLabelPrimaryBtn: { ...sizes.size13 },
   fontTagPrimary: { ...sizes.size17 },
-};
+  fontInputThin: { ...sizes.size18 },
+  fontHelperText: { ...sizes.size19 },
+} as const;
 
 export const typography = {
   fontFamily: '"Inter", sans-serif, sans-serif',

@@ -19,6 +19,7 @@ export const colors = {
 
   /* Цвет состояний */
   colorPrimaryDefault: '#FC203C',
+  colorPrimarySucces: '#28CD41',
   colorPrimaryHover: '#FF334D',
   colorPrimaryDisable: colord('#FC203C').alpha(tone.toneHover).toRgbString(),
 
