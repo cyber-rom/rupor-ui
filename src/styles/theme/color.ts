@@ -15,6 +15,7 @@ export const colors = {
   colorGrey: '#2F3136',
   colorBlack: '#212226',
   colorRed: '#212226',
+  colorDarkGrey: '#3A3C42',
 
   /* Цвет состояний */
   colorPrimaryDefault: '#FC203C',

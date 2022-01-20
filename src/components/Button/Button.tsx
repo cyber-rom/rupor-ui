@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonR } from './Button.style';
+import { ButtonR, IconWrapper, ButtonContainer } from './Button.style';
 import { ButtonProps } from './Button.types';
 
 export const Button = ({
@@ -14,6 +14,7 @@ export const Button = ({
   disabled,
   circle,
   theme,
+  icon,
 }: ButtonProps) => (
   <ButtonR
     backgroundColor={backgroundColor}
@@ -24,6 +25,11 @@ export const Button = ({
     disabled={disabled}
     circle={circle}
   >
-    {isLoading ? loaderIcon : title}
+    {isLoading ? loaderIcon : (
+      <ButtonContainer>
+        {icon && <IconWrapper>{icon}</IconWrapper>}
+        {title}
+      </ButtonContainer>
+    )}
   </ButtonR>
 );
