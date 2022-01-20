@@ -1,7 +1,5 @@
 export interface Font {
-  bold: number;
-  height: string;
-  size: string;
+  [ key: string ]: string
 }
 
 /* Размер шрифтов */
@@ -9,83 +7,104 @@ export const sizes = {
   /* Heading */
 
   size1: {
-    size: '40px',
-    height: '48px',
-    bold: 700,
+    fontSize: '40px',
+    lineHeight: '48px',
+    fontWeight: 700,
   },
   size2: {
-    size: '32px',
-    height: '32px',
-    bold: 700,
+    fontSize: '32px',
+    lineHeight: '32px',
+    fontWeight: 700,
   },
   size3: {
-    size: '20px',
-    height: '28px',
-    bold: 700,
+    fontSize: '20px',
+    lineHeight: '28px',
+    fontWeight: 700,
   },
   size4: {
-    size: '16px',
-    height: '24px',
-    bold: 700,
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontWeight: 700,
   },
 
   /* Paragraph */
 
   size5: {
-    size: '24px',
-    height: '36px',
-    bold: 400,
+    fontSize: '24px',
+    lineHeight: '36px',
+    fontWeight: 400,
   },
   size6: {
-    size: '20px',
-    height: '32px',
-    bold: 400,
+    fontSize: '20px',
+    linelineHeight: '32px',
+    fontWeight: 400,
   },
   size7: {
-    size: '16px',
-    height: '24px',
-    bold: 400,
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontWeight: 400,
   },
   size8: {
-    size: '14px',
-    height: '20px',
-    bold: 400,
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: 400,
   },
   size9: {
-    size: '12px',
-    height: '16px',
-    bold: 400,
+    fontSize: '12px',
+    lineHeight: '16px',
+    fontWeight: 400,
   },
 
   /* Links */
 
   size10: {
-    size: '20px',
-    height: '28px',
-    bold: 600,
+    fontSize: '20px',
+    lineHeight: '28px',
+    fontWeight: 600,
   },
   size11: {
-    size: '16px',
-    height: '24px',
-    bold: 600,
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontWeight: 600,
   },
   size12: {
-    size: '14px',
-    height: '20px',
-    bold: 600,
+    fontSize: '16px',
+    lineHeight: '20px',
+    fontWeight: 600,
   },
   size13: {
-    size: '12px',
-    height: '16px',
-    bold: 600,
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: 600,
+  },
+  size14: {
+    fontSize: '12px',
+    lineHeight: '16px',
+    fontWeight: 600,
+  },
+  size15: {
+    fontSize: '8px',
+    lineHeight: '12px',
+    fontWeight: 600,
+  },
+  size16: {
+    fontSize: '10px',
+    lineHeight: '12px',
+    fontWeight: 600,
   },
 };
 
-export const fonts: Record<string, Font> = {
+export const fonts: Record<string, any> = {
   fontH0: { ...sizes.size4 },
   fontH1: { ...sizes.size3 },
   fontH2: { ...sizes.size2 },
   fontH3: { ...sizes.size1 },
+  fontLabel: { ...sizes.size8 },
+  fontLabelSmall: { ...sizes.size15 },
+  fontLabelPrimary: { ...sizes.size12 },
+  fontLabelSecondary: { ...sizes.size13 },
+  fontLabelPrimaryBtn: { ...sizes.size13 },
+  fontLabelSmallBtn: { ...sizes.size16 },
 };
 
 export const typography = {

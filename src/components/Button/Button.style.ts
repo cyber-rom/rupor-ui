@@ -3,11 +3,12 @@ import styled, { css } from 'styled-components';
 import { ButtonElemProps } from './Button.types';
 import { vars } from '../../styles';
 import { tone } from '../../styles/theme/opasity';
+import { fonts as ThemeFonts } from '../../styles/theme/typography';
 
 const primaryBtn = css`
+        ${{ ...ThemeFonts.fontLabelPrimary }};
         background-color: ${vars.colorPrimaryDefault};
         color: ${vars.colorTextLight};
-        font-size: ${vars.x4};
         padding: ${vars.x3_5} ${vars.x6};
         border-radius: ${vars.x2};
         &:hover {
@@ -16,9 +17,9 @@ const primaryBtn = css`
 `;
 
 const secondaryLightBtn = css`
+        ${{ ...ThemeFonts.fontLabelBtn }};
         background-color: ${vars.colorSecondaryLightDefault};
         color: ${vars.colorTextDark};
-        font-size: ${vars.x4};
         padding: ${vars.x2_5} ${vars.x4};
         border-radius: ${vars.x2};
         &:hover {
@@ -45,7 +46,7 @@ const defaultBtn = css`
 `;
 
 const tagBtn = css`
-        font-size: ${vars.x2_5};
+        ${{ ...ThemeFonts.fontLabelSmallBtn }}
         padding: ${vars.x05} ${vars.x1};
         color: ${vars.colorTag};
         border-radius: ${vars.x05};
@@ -70,8 +71,6 @@ export const ButtonR = styled.button<ButtonElemProps>`
         return defaultBtn;
     }
   }}
-
-    font-family: ${vars.fontFamily};
     font-weight: ${(props) => (props.theme === 'tag' ? '500' : '600')};
     border: 0;
     border-radius: ${(props) => (props.circle && '50%')};
