@@ -90,6 +90,11 @@ export const sizes = {
   size16: {
     fontSize: '10px',
     lineHeight: '12px',
+    fontWeight: 500,
+  },
+  size17: {
+    fontSize: '12px',
+    lineHeight: '20px',
     fontWeight: 600,
   },
 };
@@ -99,12 +104,14 @@ export const fonts: Record<string, any> = {
   fontH1: { ...sizes.size3 },
   fontH2: { ...sizes.size2 },
   fontH3: { ...sizes.size1 },
+  /* 14 20 400 */
   fontLabel: { ...sizes.size8 },
   fontLabelSmall: { ...sizes.size15 },
+  fontLabelXSmall: { ...sizes.size16 },
   fontLabelPrimary: { ...sizes.size12 },
   fontLabelSecondary: { ...sizes.size13 },
   fontLabelPrimaryBtn: { ...sizes.size13 },
-  fontLabelSmallBtn: { ...sizes.size16 },
+  fontTagPrimary: { ...sizes.size17 },
 };
 
 export const typography = {

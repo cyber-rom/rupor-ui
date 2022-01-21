@@ -12,7 +12,6 @@ export const ShowMoreBtn = ({
   <BtnWrapper className={className} onClick={onClick}>
     <IconContainer
       collapsed={collapsed}
-
     >
       <IconWrapper>{icon}</IconWrapper>
     </IconContainer>
