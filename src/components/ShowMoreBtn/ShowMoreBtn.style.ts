@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { fonts as ThemeFonts } from '../../styles/theme/typography';
 import { vars } from '../../styles';
 
 export const BtnWrapper = styled.div`
@@ -13,19 +13,17 @@ export const IconWrapper = styled.span`
     display: inline-block;
 `;
 
-export const IconContainer = styled.div<any>`
-    margin-right: ${vars.x8};
+export const IconContainer = styled.div<{ collapsed?: boolean }>`
     display: flex;
+    margin-right: ${vars.x8};
     width: ${vars.x6};
     height: ${vars.x6};
     cursor: pointer;
-    margin: ${(props) => (props.collapsed && 'auto')};
+    // margin: ${(collapsed) => (collapsed && 'auto')};
 `;
 
 export const TitleWrapper = styled.span`
+    ${{ ...ThemeFonts.fontLabel }}
     color: ${vars.colorSecondaryLightDefault};
     cursor: pointer;
-    font-family: ${vars.fontFamily};
-    font-weight: 400;
-    font-size: 14px;
 `;

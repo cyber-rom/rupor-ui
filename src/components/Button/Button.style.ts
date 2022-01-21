@@ -17,7 +17,7 @@ const primaryBtn = css`
 `;
 
 const secondaryLightBtn = css`
-        ${{ ...ThemeFonts.fontLabelBtn }};
+        ${{ ...ThemeFonts.fontLabelSecondary }};
         background-color: ${vars.colorSecondaryLightDefault};
         color: ${vars.colorTextDark};
         padding: ${vars.x2_5} ${vars.x4};
@@ -28,9 +28,9 @@ const secondaryLightBtn = css`
 `;
 
 const secondaryDarkBtn = css`
+        ${{ ...ThemeFonts.fontLabelSecondary }};
         background-color: ${vars.colorSecondaryDarkDefault};
         color: ${vars.colorTextLight};
-        font-size: ${vars.x4};
         padding: ${vars.x2_5} ${vars.x4};
         border-radius: ${vars.x2};
         &:hover {
@@ -39,6 +39,7 @@ const secondaryDarkBtn = css`
 `;
 
 const defaultBtn = css`
+        ${{ ...ThemeFonts.fontLabelPrimary }};
         background-color: ${vars.colorSecondaryDarkDefault};
         color: ${vars.colorTextDark};
         padding: ${vars.x4} ${vars.x5};
@@ -46,7 +47,7 @@ const defaultBtn = css`
 `;
 
 const tagBtn = css`
-        ${{ ...ThemeFonts.fontLabelSmallBtn }}
+        ${{ ...ThemeFonts.fontLabelXSmall }}
         padding: ${vars.x05} ${vars.x1};
         color: ${vars.colorTag};
         border-radius: ${vars.x05};
@@ -57,6 +58,7 @@ const tagBtn = css`
 `;
 
 export const ButtonR = styled.button<ButtonElemProps>`
+    font-family : inherit;
     ${(props) => {
     switch (props.theme) {
       case 'primary':
@@ -71,7 +73,6 @@ export const ButtonR = styled.button<ButtonElemProps>`
         return defaultBtn;
     }
   }}
-    font-weight: ${(props) => (props.theme === 'tag' ? '500' : '600')};
     border: 0;
     border-radius: ${(props) => (props.circle && '50%')};
     color: ${(props) => props.color};
