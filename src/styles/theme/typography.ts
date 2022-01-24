@@ -124,6 +124,7 @@ export const fonts: Record<string, any> = {
   fontTagPrimary: { ...sizes.size17 },
   fontInputThin: { ...sizes.size18 },
   fontHelperText: { ...sizes.size19 },
+  fontTabHeaderItem: { ...sizes.size10 },
 } as const;
 
 export const typography = {

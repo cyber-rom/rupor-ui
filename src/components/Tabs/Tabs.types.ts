@@ -1,9 +1,3 @@
-export interface ITabHeaderItemProps {
-  text: string,
-  selected?: boolean,
-  onClick: () => void
-}
-
 export interface ITabs {
   tabs: ITab[],
   activeIndex: number,
