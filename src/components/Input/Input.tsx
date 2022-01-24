@@ -1,31 +1,41 @@
-import React, { FC } from 'react';
-import { CustomInputStyled, LabelStyled } from './CustomInput.style';
-import { InputTypes } from './Input.types';
-import { ExclamationMark, ApproveMark } from '../../assets/icons';
+import React, { FocusEvent, useState } from 'react';
+import { BaseInput } from './BaseInput';
+import { AbortmentContainer, InputWrapper } from './Input.style';
+import { InputProps } from './Input.types';
 
-const Input: FC<InputTypes> = (
-  {
-    afix,
-    error,
-    approve,
-    label,
-    isDisabled,
-    postfix,
-    ...inputProps
-  },
-) => (
-  <div>
-    <LabelStyled>{label}</LabelStyled>
-    <CustomInputStyled
+export const Input = (props: InputProps) => {
+  const { afix, postfix, disabled } = props;
+  const { onFocus = () => {}, onBlur = () => {}, ...baseInputProps } = props;
+  const [focused, setFocused] = useState(false);
+
+  const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
+    onFocus(event);
+    setFocused(true);
+  };
+
+  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+    onBlur(event);
+    setFocused(false);
+  };
+
+  return (
+    <InputWrapper
       afix={afix}
       postfix={postfix}
-      disabled={isDisabled}
-      isDisabled={isDisabled}
-      {...inputProps}
-    />
-    {error && <ExclamationMark />}
-    {approve && <ApproveMark />}
-  </div>
-);
-
-export { Input };
+      disabled={disabled}
+      className={`${focused ? 'RuiInput-focused' : ''} ${disabled ? 'RuiInput-disabled' : ''}`}
+    >
+      <AbortmentContainer disabled={disabled}>
+        {afix}
+      </AbortmentContainer>
+      <BaseInput
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        {...baseInputProps}
+      />
+      <AbortmentContainer disabled={disabled}>
+        {postfix}
+      </AbortmentContainer>
+    </InputWrapper>
+  );
+};
