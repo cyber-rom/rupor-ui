@@ -36,5 +36,7 @@
              - node
            script:
              - git remote add github git@github.com:cyber-rom/rupor-ui.git
-             - git fetch
-             - git push github HEAD:dev --allow-unrelated-histories
+             - git fetch github main
+             - git checkout release/github
+             - git rebase github/dev
+             - git push github HEAD:dev
