@@ -37,4 +37,4 @@
            script:
              - git remote add github git@github.com:cyber-rom/rupor-ui.git
              - git pull --ff-only
-             - git push github main
+             - git push -f github main
