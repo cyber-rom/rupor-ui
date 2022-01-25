@@ -36,6 +36,5 @@
              - node
            script:
              - git remote add github git@github.com:cyber-rom/rupor-ui.git
-             - git pull --ff-only
-             - git add .
+             - git fetch
              - git push github HEAD:main
