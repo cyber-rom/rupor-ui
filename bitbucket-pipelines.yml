@@ -29,3 +29,13 @@
              - npm run build
              - printf "//`node -p \"require('url').parse(process.env.NPM_REGISTRY_URL || 'https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
              - npm publish
+     release/github:
+       - step:
+           deployment: production
+           caches:
+             - node
+           script:
+             - git remote add sync git@github.com:cyber-rom/rupor-ui.git
+             - git checkout main
+             - git pull
+             - git push sync main
