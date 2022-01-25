@@ -36,6 +36,7 @@
              - node
            script:
              - git remote add sync git@github.com:cyber-rom/rupor-ui.git
+             - git fetch
              - git checkout main
              - git pull
              - git push sync main
