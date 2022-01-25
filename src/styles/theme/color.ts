@@ -14,6 +14,7 @@ export const colors = {
   colorLightGrey: '#828386',
   colorGrey: '#2F3136',
   colorBlack: '#212226',
+  colorOverlay: colord('#212226').alpha(tone.toneOverlay).toRgbString(),
   colorRed: '#212226',
   colorDarkGrey: '#3A3C42',
 
